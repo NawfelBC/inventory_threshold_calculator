@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #0f172a;
+  --background: #f8fafc;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #f8fafc;
+    --background: #0f172a;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+/* Additional custom styles */
+.prose code {
+  @apply bg-gray-100 px-1 py-0.5 rounded text-sm;
+}
+
+.prose ul {
+  @apply list-disc pl-5;
+}
+
+.prose ol {
+  @apply list-decimal pl-5;
+}
+
+/* Form styling */
+input, select {
+  @apply rounded-md border-gray-300 shadow-sm;
+}
+
+input:focus, select:focus {
+  @apply focus:border-blue-500 focus:ring-blue-500;
+}
+
+/* Tooltip styling for charts */
+.recharts-tooltip-wrapper {
+  @apply !shadow-lg;
+}
+
+.recharts-default-tooltip {
+  @apply !bg-white !border-0 !shadow-none !rounded-md;
+}
+
+/* Animation for loading states */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
